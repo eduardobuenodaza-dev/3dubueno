@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>3DUBUENO Consulting | HSE · ISO 14001 · Normativa Ambiental</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--v:#1a6b3c;--v2:#27a85f;--dark:#0d1f14;--gray:#f5f7f5;--white:#fff;--txt:#2c3e2d;}
+body{font-family:'Segoe UI',sans-serif;color:var(--txt);background:var(--white);scroll-behavior:smooth;}
+
+nav{background:var(--dark);padding:14px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:8px;}
+.logo-nav{display:flex;align-items:center;gap:12px;}
+.logo-shield{width:38px;height:44px;}
+.logo-txt{display:flex;flex-direction:column;line-height:1.1;}
+.logo-txt .n1{color:#fff;font-size:1rem;font-weight:700;letter-spacing:1px;}<br>.logo-txt .n1 span{color:var(--v2);}
+.logo-txt .n2{color:#5a8a6a;font-size:.65rem;letter-spacing:3px;font-weight:400;}
+.nav-links a{color:#bbb;text-decoration:none;margin-left:18px;font-size:.83rem;transition:.2s;}
+.nav-links a:hover{color:var(--v2);}
+
+.hero-wrap{background:linear-gradient(135deg,var(--dark) 52%,#0f3320 100%);}
+.hero{max-width:1100px;margin:0 auto;padding:68px 40px 56px;display:grid;grid-template-columns:1fr 240px;gap:46px;align-items:center;}
+@media(max-width:750px){.hero{grid-template-columns:1fr;text-align:center;padding:50px 24px 40px;}.hero-photo-col{display:flex;justify-content:center;}}
+.hero-photo-col{display:flex;flex-direction:column;gap:14px;align-items:center;}
+.photo-main{width:210px;height:250px;border-radius:14px;object-fit:cover;object-position:top center;border:2.5px solid var(--v2);box-shadow:0 10px 36px rgba(0,0,0,.45);}
+.photo-action{width:210px;height:130px;border-radius:10px;object-fit:cover;object-position:top center;border:2px solid rgba(39,168,95,.3);box-shadow:0 6px 20px rgba(0,0,0,.3);}
+.chip{display:inline-block;background:rgba(39,168,95,.18);color:var(--v2);border:1px solid rgba(39,168,95,.35);padding:5px 14px;border-radius:20px;font-size:.76rem;font-weight:700;letter-spacing:.5px;margin-bottom:14px;}
+.hero h1{font-size:2.2rem;color:#fff;line-height:1.2;margin-bottom:6px;}
+.hero h1 span{color:var(--v2);}
+.hero .role{color:#90b89a;font-size:.92rem;margin-bottom:14px;font-weight:500;}
+.hero p{color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.75;max-width:540px;margin-bottom:20px;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;}
+.tag{background:rgba(39,168,95,.12);color:var(--v2);padding:4px 11px;border-radius:20px;font-size:.75rem;font-weight:600;border:1px solid rgba(39,168,95,.25);}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-p{background:var(--v2);color:#fff;padding:11px 24px;border-radius:8px;border:none;cursor:pointer;font-size:.9rem;font-weight:600;transition:.2s;}
+.btn-p:hover{background:#1e8f4e;}
+.btn-o{background:transparent;color:#fff;padding:11px 24px;border-radius:8px;border:2px solid rgba(255,255,255,.28);cursor:pointer;font-size:.9rem;transition:.2s;}
+.btn-o:hover{border-color:var(--v2);color:var(--v2);}
+
+.stats-bar{background:var(--v);padding:26px 40px;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;}
+.stat-item{text-align:center;color:#fff;}
+.stat-n{font-size:1.9rem;font-weight:800;}
+.stat-l{font-size:.75rem;color:rgba(255,255,255,.72);margin-top:2px;}
+
+section{padding:68px 40px;}
+.sec-title{text-align:center;margin-bottom:46px;}
+.sec-title h2{font-size:1.85rem;color:var(--v);margin-bottom:10px;}
+.sec-title p{color:#666;max-width:530px;margin:0 auto;font-size:.93rem;line-height:1.65;}
+
+#servicios{background:var(--gray);}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:24px;max-width:1080px;margin:0 auto;}
+.card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.07);transition:.25s;display:flex;flex-direction:column;}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12);}
+.card-icon{font-size:2.8rem;text-align:center;padding:32px 20px 18px;background:linear-gradient(135deg,var(--dark),var(--v));}
+.card-body{padding:20px;flex:1;}
+.card-tag{display:inline-block;background:var(--v2);color:#fff;font-size:.68rem;padding:3px 10px;border-radius:20px;margin-bottom:9px;font-weight:700;letter-spacing:.4px;}
+.card h3{font-size:1.08rem;margin-bottom:7px;color:var(--dark);}
+.card p{font-size:.87rem;color:#555;line-height:1.65;}
+.card ul{margin-top:9px;padding-left:16px;}
+.card ul li{font-size:.84rem;color:#555;margin-bottom:4px;line-height:1.5;}
+.card-footer{padding:0 20px 20px;}
+.btn-card{background:var(--gray);color:var(--v);border:none;padding:10px 0;border-radius:7px;cursor:pointer;font-size:.87rem;font-weight:600;width:100%;transition:.2s;}
+.btn-card:hover{background:var(--v2);color:#fff;}
+
+#experiencia{background:var(--white);}
+.timeline{max-width:800px;margin:0 auto;position:relative;}
+.timeline::before{content:'';position:absolute;left:21px;top:0;bottom:0;width:2px;background:linear-gradient(var(--v2),var(--v));opacity:.28;}
+.titem{display:flex;gap:22px;margin-bottom:34px;}
+.ticon{width:44px;height:44px;border-radius:50%;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:3px solid var(--white);box-shadow:0 0 0 2px var(--v2);z-index:1;}
+.tcontent h4{font-size:.97rem;color:var(--dark);margin-bottom:2px;}
+.tcontent .company{font-size:.83rem;color:var(--v2);font-weight:600;margin-bottom:2px;}
+.tcontent .period{font-size:.76rem;color:#999;margin-bottom:7px;}
+.tcontent p{font-size:.85rem;color:#555;line-height:1.6;}
+
+#sobre{background:var(--gray);}
+.sobre-grid{display:grid;grid-template-columns:300px 1fr;gap:50px;max-width:980px;margin:0 auto;align-items:start;}
+@media(max-width:700px){.sobre-grid{grid-template-columns:1fr;}}
+.sobre-foto-wrap{display:flex;flex-direction:column;gap:12px;}
+.sobre-foto{width:100%;border-radius:14px;object-fit:cover;box-shadow:0 8px 28px rgba(0,0,0,.14);}
+.sobre-foto-2{width:100%;border-radius:10px;object-fit:cover;height:170px;box-shadow:0 5px 18px rgba(0,0,0,.1);}
+.sobre-txt h3{font-size:1.35rem;color:var(--v);margin-bottom:5px;}
+.sobre-txt .rol{color:var(--v2);font-size:.88rem;font-weight:600;margin-bottom:13px;}
+.sobre-txt p{color:#555;line-height:1.75;font-size:.92rem;margin-bottom:11px;}
+.skills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+.skill{background:var(--white);color:var(--v);border:1px solid rgba(26,107,60,.2);padding:4px 11px;border-radius:6px;font-size:.76rem;font-weight:600;}
+.edu-block{margin-top:22px;border-top:1px solid #e0e8e2;padding-top:18px;}
+.edu-block h4{color:var(--v);font-size:.92rem;margin-bottom:9px;font-weight:700;}
+.edu-item{display:flex;gap:10px;margin-bottom:9px;align-items:flex-start;}
+.edu-item p{font-size:.84rem;color:#444;line-height:1.5;}
+.edu-item strong{color:var(--dark);}
+
+#sectores{background:var(--white);}
+.sector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:18px;max-width:880px;margin:0 auto;}
+.sector-card{background:var(--gray);border-radius:12px;padding:22px 14px;text-align:center;transition:.2s;cursor:default;}
+.sector-card:hover{background:var(--v);}
+.sector-card:hover .sec-lbl{color:#fff;}
+.sec-ico{font-size:2rem;margin-bottom:9px;}
+.sec-lbl{font-size:.8rem;font-weight:700;color:var(--dark);}
+
+#contacto{background:var(--dark);}
+#contacto .sec-title h2{color:var(--v2);}
+#contacto .sec-title p{color:#aaa;}
+.chat-wrap{max-width:690px;margin:0 auto;}
+.chat-box{background:#111e14;border-radius:14px;padding:20px;min-height:230px;max-height:350px;overflow-y:auto;margin-bottom:13px;display:flex;flex-direction:column;gap:11px;}
+.msg{padding:11px 15px;border-radius:10px;font-size:.89rem;line-height:1.65;max-width:85%;}
+.msg.bot{background:#1a2e1f;color:#c8ecd4;align-self:flex-start;border-left:3px solid var(--v2);}
+.msg.user{background:var(--v2);color:#fff;align-self:flex-end;}
+.chat-row{display:flex;gap:9px;}
+.chat-row input{flex:1;padding:12px 15px;border-radius:9px;border:none;background:#1a2e1f;color:#fff;font-size:.9rem;outline:none;}
+.chat-row input::placeholder{color:#445;}
+.chat-row button{background:var(--v2);color:#fff;border:none;padding:12px 20px;border-radius:9px;cursor:pointer;font-weight:700;font-size:.92rem;transition:.2s;}
+.chat-row button:hover{background:#1e8f4e;}
+.chat-row button:disabled{opacity:.4;cursor:not-allowed;}
+.typing{display:flex;gap:5px;align-items:center;padding:10px 14px;}
+.typing span{width:7px;height:7px;background:var(--v2);border-radius:50%;animation:bop .9s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes bop{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-7px);}}
+.contact-info{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px;}
+.cinfo{color:#aaa;font-size:.87rem;display:flex;align-items:center;gap:7px;}
+.cinfo a{color:var(--v2);text-decoration:none;}
+
+footer{background:#060f09;color:#555;text-align:center;padding:22px;font-size:.82rem;}
+footer a{color:var(--v2);text-decoration:none;}
+
+.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;align-items:center;justify-content:center;}
+.moverlay.on{display:flex;}
+.modal{background:#fff;border-radius:16px;padding:32px;max-width:490px;width:92%;}
+.modal h3{color:var(--v);margin-bottom:12px;font-size:1.15rem;}
+.modal p{color:#555;line-height:1.7;margin-bottom:7px;font-size:.9rem;}
+.modal ul{padding-left:17px;margin-bottom:14px;}
+.modal ul li{color:#555;font-size:.87rem;margin-bottom:4px;}
+.mcl{background:var(--gray);border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:600;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-nav">
+    <svg class="logo-shield" viewBox="0 0 70 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M35 2 L65 16 L65 48 Q65 68 35 78 Q5 68 5 48 L5 16 Z" fill="#1a6b3c" stroke="#27a85f" stroke-width="2"/>
+      <path d="M35 12 L57 24 L57 49 Q57 64 35 72 Q13 64 13 49 L13 24 Z" fill="#0d1f14"/>
+      <text x="35" y="55" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-weight="700" font-size="32" fill="#27a85f">3</text>
+    </svg>
+    <div class="logo-txt">
+      <div class="n1">3DU<span>BUENO</span></div>
+      <div class="n2">CONSULTING</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#sectores">Sectores</a>
+    <a href="#contacto">Asistente IA</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <div class="chip">🛡️ JEFE HSE · MAGÍSTER EN MEDIO AMBIENTE</div>
+      <h1>Eduardo <span>Bueno Daza</span></h1>
+      <div class="role">Ingeniero en Prevención de Riesgos · Auditor Líder SGI · 3DUBUENO Consulting</div>
+      <p>Más de 15 años liderando gestión HSE en proyectos de alta complejidad en minería, energía renovable, construcción e industria. Especialista en ISO 14001, ISO 45001, seguimiento de RCA y cumplimiento regulatorio chileno.</p>
+      <div class="tags">
+        <span class="tag">ISO 14001</span><span class="tag">ISO 45001</span><span class="tag">ISO 9001</span>
+        <span class="tag">RCA · SMA</span><span class="tag">Auditor Líder SGI</span><span class="tag">Minería</span>
+        <span class="tag">Energía Renovable</span><span class="tag">SEREMI</span>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="go('contacto')">Solicitar Consultoría</button>
+        <button class="btn-o" onclick="go('servicios')">Ver Servicios</button>
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <img id="heroPhoto" class="photo-main" src="" alt="Eduardo Bueno Daza"/>
+      <img id="heroPhoto2" class="photo-action" src="" alt="Eduardo Bueno en reunión"/>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-n">+15</div><div class="stat-l">Años de experiencia</div></div>
+  <div class="stat-item"><div class="stat-n">3</div><div class="stat-l">Normas ISO</div></div>
+  <div class="stat-item"><div class="stat-n">+12K</div><div class="stat-l">Colaboradores gestionados</div></div>
+  <div class="stat-item"><div class="stat-n">5</div><div class="stat-l">Sectores industriales</div></div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="sec-title">
+    <h2>Servicios 3DUBUENO Consulting</h2>
+    <p>Soluciones técnicas especializadas para proteger a tu equipo, cumplir la normativa y garantizar la sostenibilidad de tu operación.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🦺</div>
+      <div class="card-body">
+        <span class="card-tag">PREVENCIÓN DE RIESGOS</span>
+        <h3>Gestión HSE & Seguridad Laboral</h3>
+        <p>Implementación y seguimiento de sistemas SSO bajo ISO 45001 y normativa chilena.</p>
+        <ul>
+          <li>Matrices IPER y planes de prevención</li>
+          <li>Carpetas de arranque mineras</li>
+          <li>Protocolos MINSAL (CEAL-SM, TMERT)</li>
+          <li>KPIs HSE e investigación de incidentes</li>
+        </ul>
+      </div>
+      <div class="card-footer"><button class="btn-card" onclick="openM('prev')">Ver detalle →</button></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌿</div>
+      <div class="card-body">
+        <span class="card-tag">GESTIÓN AMBIENTAL</span>
+        <h3>ISO 14001 & Control Ambiental</h3>
+        <p>Diseño e implementación de Sistemas de Gestión Ambiental. Auditorías y certificación.</p>
+        <ul>
+          <li>Aspectos e impactos ambientales</li>
+          <li>Control de emisiones y residuos industriales</li>
+          <li>Auditorías ambientales internas</li>
+          <li>Planes de manejo ambiental</li>
+        </ul>
+      </div>
+      <div class="card-footer"><button class="btn-card" onclick="openM('iso')">Ver detalle →</button></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-body">
+        <span class="card-tag">NORMATIVA & REGULATORIO</span>
+        <h3>RCA, SEREMI & Cumplimiento Legal</h3>
+        <p>Seguimiento de Resoluciones de Calificación Ambiental y coordinación con organismos fiscalizadores.</p>
+        <ul>
+          <li>Seguimiento RCA y condiciones</li>
+          <li>Coordinación SEREMI y SMA</li>
+          <li>Gestión de permisos sectoriales</li>
+          <li>RETC y reportabilidad ambiental</li>
+        </ul>
+      </div>
+      <div class="card-footer"><button class="btn-card" onclick="openM('norm')">Ver detalle →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="sec-title">
+    <h2>Trayectoria Profesional</h2>
+    <p>Más de 15 años de experiencia en posiciones de liderazgo HSE en empresas de primer nivel.</p>
+  </div>
+  <div class="timeline">
+    <div class="titem">
+      <div class="ticon">🏢</div>
+      <div class="tcontent">
+        <h4>Head HSE Corporativo</h4>
+        <div class="company">ManpowerGroup Chile</div>
+        <div class="period">Septiembre 2024 – Presente</div>
+        <p>Liderazgo de estrategia HSE para más de 12.000 colaboradores. Dirección del gobierno preventivo de ManpowerGroup, Experis y Talent Solutions. Asesoría técnica a alta dirección.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="ticon">⚖️</div>
+      <div class="tcontent">
+        <h4>Gestor de Procesos Senior</h4>
+        <div class="company">PERITUM Defensa Corporativa</div>
+        <div class="period">Feb – Ago 2024 · Las Condes</div>
+        <p>Implementación de sistemas de gestión logrando 35% de mejora en eficiencia operativa y 25% de reducción de costos.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="ticon">🏥</div>
+      <div class="tcontent">
+        <h4>Encargado de Calidad Senior</h4>
+        <div class="company">SEREMI de Salud — Región Metropolitana</div>
+        <div class="period">Ene 2020 – Dic 2022</div>
+        <p>Control de Residencias Sanitarias COVID-19. Liderazgo de Búsqueda Activa de Casos (BAC) y trazabilidad de muestras PCR.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="ticon">⛏️</div>
+      <div class="tcontent">
+        <h4>Prevencionista Senior / Jefe HSE de Proyecto</h4>
+        <div class="company">Ingeniería y Maquinarias INDAK Ltda.</div>
+        <div class="period">Mar 2015 – Jun 2019</div>
+        <p>Jefatura HSE en proyectos para Codelco El Teniente, Minera Los Pelambres y Lumina Copper. Carpetas de arranque y auditorías ISO 14001.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="ticon">🚌</div>
+      <div class="tcontent">
+        <h4>Ingeniero Jefe de Prevención de Riesgos</h4>
+        <div class="company">Grupo Turbus S.A. (SAMEX)</div>
+        <div class="period">Abr 2014 – Abr 2015</div>
+        <p>Dirección de prevención para 280 trabajadores. ISO 9001 y PEC Excelencia. Logro: Certificación Bronce Comité Paritario.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="ticon">📐</div>
+      <div class="tcontent">
+        <h4>Consultor SGI</h4>
+        <div class="company">SN Servicios Normativos</div>
+        <div class="period">Nov 2012 – Mar 2013</div>
+        <p>Implementación de SGI (ISO 9001 / ISO 14001 / OHSAS 18001) en empresas de construcción, aceros, maestranza e industria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre">
+  <div class="sec-title">
+    <h2>Sobre Mí</h2>
+    <p>Perfil profesional, formación académica y competencias técnicas.</p>
+  </div>
+  <div class="sobre-grid">
+    <div class="sobre-foto-wrap">
+      <img id="sobrePhoto" class="sobre-foto" src="" alt="Eduardo Bueno Daza"/>
+      <img id="sobrePhoto2" class="sobre-foto-2" src="" alt="Eduardo Bueno en trabajo"/>
+    </div>
+    <div class="sobre-txt">
+      <h3>Eduardo Bueno Daza</h3>
+      <div class="rol">Fundador · 3DUBUENO Consulting · Jefe HSE · Magíster en Medio Ambiente</div>
+      <p>Profesional con más de 15 años liderando gestión ambiental, seguridad y salud ocupacional en proyectos de alta complejidad en minería, energía, construcción e industria en Chile.</p>
+      <p>Especialista en implementación y seguimiento de RCA, sistemas ISO 14001 / ISO 45001 / ISO 9001, control operacional ambiental y coordinación con organismos fiscalizadores como SEREMI y SMA.</p>
+      <div class="skills">
+        <span class="skill">ISO 14001</span><span class="skill">ISO 45001</span><span class="skill">ISO 9001</span>
+        <span class="skill">OHSAS 18001</span><span class="skill">Auditor Líder SGI</span><span class="skill">RCA</span>
+        <span class="skill">IPER</span><span class="skill">DS 44</span><span class="skill">Ley 16.744</span>
+        <span class="skill">Residuos Industriales</span><span class="skill">Material Particulado</span><span class="skill">RETC</span>
+      </div>
+      <div class="edu-block">
+        <h4>📚 Formación Académica</h4>
+        <div class="edu-item"><div>🎓</div><div><p><strong>Magíster en Medio Ambiente</strong> — Gestión y Ordenamiento Ambiental<br>USACH · 2012–2013</p></div></div>
+        <div class="edu-item"><div>🎓</div><div><p><strong>Auditor Líder SGI</strong> — ISO 9001 / ISO 14001 / OHSAS 18001<br>USACH · 2013</p></div></div>
+        <div class="edu-item"><div>🎓</div><div><p><strong>Ingeniero en Prevención de Riesgos, Calidad y Ambiente</strong><br>INACAP · 2006–2009</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORES -->
+<section id="sectores">
+  <div class="sec-title">
+    <h2>Sectores de Experiencia</h2>
+    <p>Trayectoria en los sectores más exigentes en materia HSE de Chile.</p>
+  </div>
+  <div class="sector-grid">
+    <div class="sector-card"><div class="sec-ico">⛏️</div><div class="sec-lbl">Minería</div></div>
+    <div class="sector-card"><div class="sec-ico">☀️</div><div class="sec-lbl">Energía Renovable</div></div>
+    <div class="sector-card"><div class="sec-ico">🏗️</div><div class="sec-lbl">Construcción</div></div>
+    <div class="sector-card"><div class="sec-ico">🏭</div><div class="sec-lbl">Industria</div></div>
+    <div class="sector-card"><div class="sec-ico">🏥</div><div class="sec-lbl">Sector Público</div></div>
+    <div class="sector-card"><div class="sec-ico">🚌</div><div class="sec-lbl">Transporte</div></div>
+  </div>
+</section>
+
+<!-- ASISTENTE IA -->
+<section id="contacto">
+  <div class="sec-title">
+    <h2>Asistente de Servicios IA</h2>
+    <p>Cuéntame tu necesidad y el asistente te orientará sobre el servicio más adecuado para tu empresa.</p>
+  </div>
+  <div class="chat-wrap">
+    <div class="chat-box" id="chatBox">
+      <div class="msg bot">👋 ¡Hola! Soy el asistente de <strong>3DUBUENO Consulting</strong>. ¿En qué puedo ayudarte? Cuéntame sobre tu empresa, rubro o necesidad en <strong>prevención de riesgos, gestión ambiental o normativa regulatoria</strong>.</div>
+    </div>
+    <div class="chat-row">
+      <input id="chatIn" type="text" placeholder="Ej: Necesito implementar ISO 14001 en una empresa minera..." onkeydown="if(event.key==='Enter')send()"/>
+      <button id="sendBtn" onclick="send()">Enviar</button>
+    </div>
+  </div>
+  <div class="contact-info">
+    <div class="cinfo">✉️ <a href="mailto:eduardo.bueno.daza@gmail.com">eduardo.bueno.daza@gmail.com</a></div>
+    <div class="cinfo">💼 <a href="https://www.linkedin.com/in/eduardo-bueno-daza-/" target="_blank">LinkedIn</a></div>
+    <div class="cinfo">📸 <a href="https://instagram.com/3dubueno" target="_blank">@3dubueno</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong style="color:#27a85f;">3DUBUENO Consulting</strong> · HSE · ISO 14001 · Normativa Ambiental · Santiago, Chile</p>
+  <p style="margin-top:7px;"><a href="https://www.linkedin.com/in/eduardo-bueno-daza-/" target="_blank">LinkedIn</a> · <a href="https://instagram.com/3dubueno" target="_blank">@3dubueno</a></p>
+</footer>
+
+<!-- MODALES -->
+<div class="moverlay" id="m-prev"><div class="modal">
+  <h3>🦺 Gestión HSE & Prevención de Riesgos</h3>
+  <p><strong>Normativa:</strong> Ley 16.744, DS 40, DS 594, DS 44 (minería), protocolos MINSAL.</p>
+  <ul>
+    <li>Diagnóstico HSE y auditorías de cumplimiento</li>
+    <li>Matrices de identificación de peligros (IPER)</li>
+    <li>Carpetas de arranque para proyectos mineros</li>
+    <li>Implementación ISO 45001 hasta certificación</li>
+    <li>Vigilancia de la salud (PREXOR, TMERT, Psicosocial)</li>
+    <li>Investigación de accidentes, árbol de causas</li>
+  </ul>
+  <button class="mcl" onclick="closeM('prev')">Cerrar</button>
+</div></div>
+
+<div class="moverlay" id="m-iso"><div class="modal">
+  <h3>🌿 Gestión Ambiental ISO 14001</h3>
+  <p><strong>Desde diagnóstico hasta certificación y auditorías de seguimiento.</strong></p>
+  <ul>
+    <li>Levantamiento de aspectos e impactos significativos</li>
+    <li>Diseño del Sistema de Gestión Ambiental (SGA)</li>
+    <li>Control operacional: emisiones, residuos peligrosos</li>
+    <li>Control de material particulado en faenas mineras</li>
+    <li>Auditorías internas y planes de acción</li>
+    <li>Gestión de residuos (DS 148, Ley REP)</li>
+  </ul>
+  <button class="mcl" onclick="closeM('iso')">Cerrar</button>
+</div></div>
+
+<div class="moverlay" id="m-norm"><div class="modal">
+  <h3>📋 Normativa, RCA & SEREMI</h3>
+  <p><strong>Experiencia directa</strong> con SEREMI de Salud, SMA, DGA y organismos sectoriales.</p>
+  <ul>
+    <li>Seguimiento de condiciones de RCA en ejecución</li>
+    <li>Informes de cumplimiento ambiental</li>
+    <li>Coordinación con fiscalizadores e inspecciones</li>
+    <li>Permisos sectoriales (DGA, SAG, Monumentos)</li>
+    <li>RETC: declaración y reporte de emisiones</li>
+    <li>Asesoría ante SEREMI de Salud RM</li>
+  </ul>
+  <button class="mcl" onclick="closeM('norm')">Cerrar</button>
+</div></div>
+
+<script>
+const P1 = 'https://i.ibb.co/MDBJgNFF/1000004745.jpg'; // retrato principal
+const P2 = 'https://i.ibb.co/spRLRMx5/1000004746.jpg'; // reunión
+const P3 = 'https://i.ibb.co/FbQjcrxr/1000004747.jpg'; // retrato alternativo
+
+function setPhoto(id, src, fallback, h) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.src = src;
+  el.onerror = () => {
+    el.style.display = 'none';
+    const ph = document.createElement('div');
+    ph.style.cssText = `width:100%;height:${h};background:linear-gradient(135deg,#1a6b3c,#0d1f14);border-radius:inherit;display:flex;align-items:center;justify-content:center;font-size:3rem;`;
+    ph.textContent = fallback;
+    el.parentNode.insertBefore(ph, el);
+  };
+}
+
+setPhoto('heroPhoto',  P1, '👨‍💼', '250px');
+setPhoto('heroPhoto2', P2, '👥',   '130px');
+setPhoto('sobrePhoto', P3, '👨‍💼', '280px');
+setPhoto('sobrePhoto2',P2, '👥',   '170px');
+
+const SYS = `Eres el asistente virtual de 3DUBUENO Consulting, consultora fundada por Eduardo Bueno Daza.
+
+PERFIL DE EDUARDO:
+- Jefe HSE / Ingeniero en Prevención de Riesgos, +15 años de experiencia
+- Magíster en Medio Ambiente (USACH), Auditor Líder SGI
+- Head HSE Corporativo en ManpowerGroup Chile (+12.000 colaboradores)
+- Experiencia minera: Codelco El Teniente, Los Pelambres, Lumina Copper
+- Sectores: minería, energía renovable, construcción, industria, sector público
+
+SERVICIOS:
+1. Gestión HSE & Prevención de Riesgos (ISO 45001, Ley 16.744, IPER, carpetas de arranque)
+2. Gestión Ambiental ISO 14001 (SGA, aspectos/impactos, control operacional, certificación)
+3. Normativa & RCA (seguimiento RCA, SEREMI, SMA, permisos, RETC)
+
+ROL: Identifica la necesidad del usuario, recomienda el servicio adecuado, explica cómo Eduardo puede ayudar e invita a agendar diagnóstico. Contacto: eduardo.bueno.daza@gmail.com. Responde en español, tono profesional y cercano, máximo 3 párrafos.`;
+
+let hist=[];
+async function send(){
+  const inp=document.getElementById('chatIn');
+  const btn=document.getElementById('sendBtn');
+  const txt=inp.value.trim();
+  if(!txt)return;
+  addMsg(txt,'user'); inp.value=''; btn.disabled=true;
+  hist.push({role:'user',content:txt});
+  const t=addTyping();
+  try{
+    const r=await fetch('/.netlify/functions/chat',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:hist})
+    });
+    const d=await r.json();
+    const rep=d.reply||'Error al procesar. Intenta nuevamente.';
+    hist.push({role:'assistant',content:rep});
+    t.remove(); addMsg(rep,'bot');
+  }catch(e){t.remove();addMsg('Error de conexión. Intenta nuevamente.','bot');}
+  btn.disabled=false;
+}
+function addMsg(txt,type){
+  const box=document.getElementById('chatBox');
+  const d=document.createElement('div');
+  d.className=`msg ${type}`;
+  d.innerHTML=txt.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+  box.appendChild(d); box.scrollTop=box.scrollHeight; return d;
+}
+function addTyping(){
+  const box=document.getElementById('chatBox');
+  const d=document.createElement('div');
+  d.className='msg bot typing';
+  d.innerHTML='<span></span><span></span><span></span>';
+  box.appendChild(d); box.scrollTop=box.scrollHeight; return d;
+}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function openM(id){document.getElementById('m-'+id).classList.add('on');}
+function closeM(id){document.getElementById('m-'+id).classList.remove('on');}
+document.querySelectorAll('.moverlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('on');}));
+</script>
+</body>
+</html>
